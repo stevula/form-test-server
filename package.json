@@ -1,8 +1,9 @@
 {
-  "name": "Simple API Server",
+  "name": "simple-api-server",
   "version": "1.0.0",
   "description": "A simple API server using Node/Express",
   "main": "index.js",
+  "repository": "https://github.com/stevula/simple-api-server.git",
   "scripts": {
     "test": "mocha"
   },
