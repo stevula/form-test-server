@@ -25,3 +25,7 @@ exports.signup = (req, res, next) => {
     })
     .catch(error => next(error));
 };
+
+exports.signin = (req, res, next) => {
+  req.send({ token: tokenForUser(req.user) });
+};
