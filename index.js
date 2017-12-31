@@ -3,6 +3,7 @@ const http = require('http');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const cors = require('cors');
 const router = require('./router');
 
 // db setup
@@ -11,6 +12,7 @@ mongoose.connect('mongodb://localhost:auth/auth');
 // app setup
 const app = express();
 app.use(morgan('combined'));
+app.use(cors());
 app.use(bodyParser.json({ type: '*/*' }));
 router(app);
 
