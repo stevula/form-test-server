@@ -11,9 +11,10 @@ const localLogin = new LocalStrategy(localOptions, (email, password, done) => {
   User.findOne({ email })
     .then((user) => {
       if (user) {
-        user.comparePassword(password, (err, isMatch) => {
+        return user.comparePassword(password, (err, isMatch) => {
           if (err) return done(err);
           if (isMatch) return done(null, user);
+          return done(null, false);
         });
       }
       return done(null, false);
