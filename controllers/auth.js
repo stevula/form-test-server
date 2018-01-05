@@ -8,10 +8,10 @@ const tokenForUser = (user) => {
 };
 
 exports.signup = (req, res, next) => {
-  const { email, password } = req.body;
+  const { email, firstName, lastName } = req.body;
 
-  if (!email || !password) {
-    return res.status(422).send({ message: 'Email and password are required.' });
+  if (!email || !firstName || !lastName) {
+    return res.status(422).send({ message: 'Email, firstName, lastName are required.' });
   }
 
   return User.findOne({ email })
@@ -19,7 +19,7 @@ exports.signup = (req, res, next) => {
       if (existingUser) {
         return res.status(422).send({ message: 'Email already taken.' });
       }
-      return new User({ email, password }).save().then(user => res.json({
+      return new User({ email, firstName, lastName }).save().then(user => res.json({
         token: tokenForUser(user),
       }));
     })
