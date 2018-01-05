@@ -11,13 +11,13 @@ exports.signup = (req, res, next) => {
   const { email, password } = req.body;
 
   if (!email || !password) {
-    return res.status(422).send({ error: 'Email and password are required.' });
+    return res.status(422).send({ message: 'Email and password are required.' });
   }
 
   return User.findOne({ email })
     .then((existingUser) => {
       if (existingUser) {
-        return res.status(422).send({ error: 'Email already taken.' });
+        return res.status(422).send({ message: 'Email already taken.' });
       }
       return new User({ email, password }).save().then(user => res.json({
         token: tokenForUser(user),
