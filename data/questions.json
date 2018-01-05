@@ -2,23 +2,23 @@
   "questions": [
     {
       "text": "What is your favorite job and why?",
-      "duration": 60
+      "ms": 60000
     },
     {
       "text": "What are you doing with your life?",
-      "duration": 120
+      "ms": 120000
     },
     {
       "text": "How would you reply to a customer's question?",
-      "duration": 300
+      "ms": 300000
     },
     {
       "text": "What are the benefits of using CRM?",
-      "duration": 520
+      "ms": 520000
     },
     {
       "text": "Answer this last question.",
-      "duration": 500
+      "ms": 500000
     }
   ]
 }
