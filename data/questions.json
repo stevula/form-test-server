@@ -1,9 +1,24 @@
 {
   "questions": [
-    "What is your favorite job and why?",
-    "What are you doing with your life?",
-    "How would you reply to a customer's question?",
-    "What are the benefits of using CRM?",
-    "Answer this last question."
+    {
+      "text": "What is your favorite job and why?",
+      "duration": 60
+    },
+    {
+      "text": "What are you doing with your life?",
+      "duration": 120
+    },
+    {
+      "text": "How would you reply to a customer's question?",
+      "duration": 300
+    },
+    {
+      "text": "What are the benefits of using CRM?",
+      "duration": 520
+    },
+    {
+      "text": "Answer this last question.",
+      "duration": 500
+    }
   ]
 }
