@@ -7,7 +7,8 @@ const cors = require('cors');
 const router = require('./router');
 
 // db setup
-mongoose.connect('mongodb://localhost:strive/strive');
+const DB_URI = process.env.MONGODB_URI || 'mongodb://localhost:strive/strive';
+mongoose.connect(DB_URI);
 
 // app setup
 const app = express();
