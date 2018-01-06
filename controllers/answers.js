@@ -1,7 +1,6 @@
 const User = require('../models/user');
 
 exports.update = (req, res, next) => {
-  console.log(req.body)
   const { email, questionNumber, answer } = req.body;
 
   if (!email || !questionNumber || !answer) {
@@ -10,7 +9,6 @@ exports.update = (req, res, next) => {
 
   return User.findOne({ email })
     .then((user) => {
-      console.log('user: ', user)
       if (!user) {
         return res.status(404).send({ message: 'User not found.' });
       }
