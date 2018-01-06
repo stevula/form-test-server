@@ -3,7 +3,7 @@ const User = require('../models/user');
 exports.update = (req, res, next) => {
   const { email, questionNumber, answer } = req.body;
 
-  if (!email || !questionNumber || !answer) {
+  if (!email || typeof questionNumber !== 'number' || !answer) {
     return res.status(409).send({ message: 'Bad payload' });
   }
 
