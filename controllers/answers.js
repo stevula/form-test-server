@@ -10,6 +10,7 @@ exports.update = (req, res, next) => {
 
   return User.findOne({ email })
     .then((user) => {
+      console.log('user: ', user)
       if (!user) {
         return res.status(404).send({ message: 'User not found.' });
       }
@@ -17,7 +18,7 @@ exports.update = (req, res, next) => {
       answers[questionNumber] = answer;
       user.answers = answers;
       user.save();
-      return res.status(200);
+      return res.status(200).send({ success: true });
     })
     .catch(error => next(error));
 };
